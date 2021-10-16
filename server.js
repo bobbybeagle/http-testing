@@ -22,7 +22,7 @@ app.post('/query', (req, res) => {
     console.log("Receiving request");
     if(req.body.query) {
         console.log("phase1")
-        console.log(req.body.query);
+        console.log(client.query(req.body.query));
         console.log("phase1.2")
         client.query(req.body.query, (err, r) => {
              console.log(err)
