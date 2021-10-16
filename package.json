@@ -1,6 +1,7 @@
 {
     "name": "robloxsql",
     "description": "Roblox SQL server example",
+    "version": "1.0.0",
     "main": "server.js",
     "scripts": {
       "heroku-postbuild": "npm install --prefix client && npm run build --prefix client"
