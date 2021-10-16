@@ -43,6 +43,10 @@ app.post('/query', (req, res) => {
     }
 });
 
+app.get("/", (req, res) => {
+    res.send("Testing")
+}
+
 const port = process.env.PORT || 8080;
 
 //Start listening
