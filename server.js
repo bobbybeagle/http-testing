@@ -2,6 +2,8 @@
 const express = require('express');
 const {Client} = require('pg');
 
+console.log("testing")
+
 //Create the conection to the postgres server
 const client = new Client({
     connectionString: process.env.DATABASE_URL
