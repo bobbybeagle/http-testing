@@ -3,7 +3,7 @@
     "description": "Roblox SQL server example",
     "main": "server.js",
     "scripts": {
-      "start": "node server.js"
+      "heroku-postbuild": "npm install --prefix client && npm run build --prefix client"
     },
     "dependencies": {
       "express": "4.x.x",
