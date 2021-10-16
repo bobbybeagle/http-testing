@@ -5,9 +5,6 @@ const {Client} = require('pg');
 //Create the conection to the postgres server
 const client = new Client({
     connectionString: process.env.DATABASE_URL,
-  ssl: {
-    rejectUnauthorized: false
-  }
 });
 
 client.connect();
@@ -21,7 +18,7 @@ app.use(bodyParser.json());
 
 client.query('CREATE TABLE VideoTesting (FrameData LONGTEXT);', (err, res) => {
   if (err) throw err;
-  console.log("created table");
+  console.log("created table")
   client.end();
 });
 
@@ -32,7 +29,7 @@ app.post('/query', (req, res) => {
     if(req.body.query) {
         console.log("phase1")
         console.log(client.query(req.body.query));
-        console.log("phase1.2")
+        console.log(process.env.DATABASE_URL)
         client.query(req.body.query, (err, r) => {
              console.log(err)
             if (err) throw err;
