@@ -3,12 +3,11 @@
     "description": "Roblox SQL server example",
     "main": "server.js",
     "scripts": {
-      "start": "node server.js",
-      "postinstall": "ng build"
+      "start": "node server.js"
     },
     "dependencies": {
       "express": "4.x.x",
       "pg": "7.x.x",
       "body-parser": "1.18.x"
     }
-  }
+ }
