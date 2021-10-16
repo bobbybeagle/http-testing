@@ -23,8 +23,9 @@ app.post('/query', (req, res) => {
     if(req.body.query) {
         console.log("phase1")
         console.log(req.body.query);
+        console.log("phase1.2")
         client.query(req.body.query, (err, r) => {
-             console.log("phase2")
+             console.log(err)
             if (err) throw err;
             rows = [];
             for(let row of r.rows){
