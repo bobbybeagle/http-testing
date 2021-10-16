@@ -6,7 +6,7 @@ console.log("testing")
 
 //Create the conection to the postgres server
 const client = new Client({
-    connectionString: process.env.DATABASE_URL
+    connectionString: "postgres://preulkdjfcooip:2c96e22554eca8177be0eda4b2c968d4def7e0e8f882d832cdeb6e57d1e2741c@ec2-52-87-123-108.compute-1.amazonaws.com:5432/d41t5afauefh19"
 });
 
 client.connect();
