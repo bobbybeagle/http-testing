@@ -19,6 +19,12 @@ const app = express();
 // parse application/json
 app.use(bodyParser.json());
 
+client.query(CREATE TABLE VideoTesting (FrameData LONGTEXT);', (err, res) => {
+  if (err) throw err;
+  console.log("created table");
+  client.end();
+});
+
 //Handle a post request at /query
 app.post('/query', (req, res) => {
     res.setHeader('Content-Type', 'application/json');
