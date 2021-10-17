@@ -16,11 +16,16 @@ const app = express();
 // parse application/json
 app.use(bodyParser.json());
 
-client.query('CREATE TABLE VideoTesting (FrameData LONGTEXT);', (err, res) => {
-  if (err) throw err;
-  console.log("created table")
-  client.end();
-});
+module.exports = {
+  query: function(text, values) {
+    console.log(text, values);
+    return new Promise(function (resolve, reject) {
+        client.query(text, values)
+         .then(function (res) { resolve(res.rows[0]) })
+         .catch(function (e) { reject(e.stack) };
+        });
+  }
+};
 
 //Handle a post request at /query
 app.post('/query', (req, res) => {
