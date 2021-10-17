@@ -16,17 +16,6 @@ const app = express();
 // parse application/json
 app.use(bodyParser.json());
 
-module.exports = {
-  query: function(text, values) {
-    console.log(text, values);
-    return new Promise(function (resolve, reject) {
-        client.query(text, values)
-         .then(function (res) { resolve(res.rows[0]) })
-         .catch(function (e) { reject(e.stack) };
-        });
-  }
-};
-
 //Handle a post request at /query
 app.post('/query', (req, res) => {
     res.setHeader('Content-Type', 'application/json');
